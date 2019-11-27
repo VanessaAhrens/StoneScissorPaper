@@ -5,6 +5,10 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        //Verwendung Referee class und Aufruf der Methode
+        Referee Hans = new Referee(); // Referee erstellt
+        Hans.Hello();                  // Aufruf Methode mit neuem Objekt
+
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter the number of Players:");
 
@@ -24,6 +28,7 @@ public class Main {
             System.out.println(players.get(i) + ", choose Stone, Scissor or Paper");
             choice.add((scanner.next()));
         }
+        //Spiel beginnen
         if (choice.contains("Stone") && choice.contains("Scissor")) {
             System.out.println("Stone won the game.");
         } else if (choice.contains("Scissor") && choice.contains("Paper")) {
@@ -35,3 +40,17 @@ public class Main {
         }
     }
 }
+// Method playAgain nach Eingabe
+// Test schreiben
+// Punktestand einführen
+// Rechtschreibung
+/*
+Mehrere Spieler einbauen:
+Alle drei Kombis ungültig
+Welcher der Spieler hat gewonnen? Contains ist zu ungenau, mal mit get(i) auf Index programmieren.
+Spielbeginn: Spieler 1  hat Schere, Spieler 2 Papier,  Spieler 3 hat Papier
+Prüfung Runde 1: Spieler 1  hat Schere, Spieler 2 Papier also ist Spieler 2 raus
+Prüfung Runde 2: Spieler 1 hat Schere, Spieler 3 hat Papier >> Spieler 3 ist raus
+Ergebnis: Spieler 1 hat gewonnen
+Reihenfolge-Prüfung, Spieler dann removen  und automatisch neue Runde
+ */
