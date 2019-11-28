@@ -26,8 +26,14 @@ public class Main {
             choice.add((scanner.next()));
         }
         for (int i = 0; i < numberOfPlayersChosen; i++) {
-            if (choice.get(0).equals("Stone")) {
+            if (choice.get(i).equals("Stone")) {
                 players.remove((choice.indexOf("Scissor")));
+            }
+            else if (choice.get(i).equals("Scissor")) {
+                players.remove((choice.indexOf("Paper")));
+            }
+            else {
+                players.remove((choice.indexOf("Stone")));
             }
             System.out.println(choice);
             System.out.println("choice.get 0" + choice.get(0));
