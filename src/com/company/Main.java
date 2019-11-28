@@ -5,9 +5,6 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        //Verwendung Referee class und Aufruf der Methode
-        Referee Hans = new Referee(); // Referee erstellt
-        Hans.Hello();                  // Aufruf Methode mit neuem Objekt
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter the number of Players:");
@@ -28,8 +25,20 @@ public class Main {
             System.out.println(players.get(i) + ", choose Stone, Scissor or Paper");
             choice.add((scanner.next()));
         }
-        //Spiel beginnen
-        if (choice.contains("Stone") && choice.contains("Scissor")) {
+        for (int i = 0; i < numberOfPlayersChosen; i++) {
+            if (choice.get(i).equals("Stone") && choice.get(i++).equals("Scissor")) ;
+            {
+                players.remove(i + 1);
+                System.out.println(players.get(i) + " won the game.");
+                System.out.println("numberOfPlayersChosen " + choice.get(numberOfPlayersChosen));
+                System.out.println("i " + choice.get(i));
+                System.out.println("i++ " + choice.get(i++));
+                System.out.println("i+1 " + choice.get(i + 1));
+                System.out.println(players);
+            }
+        }
+
+       /* if (choice.contains("Stone") && choice.contains("Scissor")) {
             System.out.println("Stone won the game.");
         } else if (choice.contains("Scissor") && choice.contains("Paper")) {
             System.out.println("Scissor won the game.");
@@ -37,20 +46,22 @@ public class Main {
             System.out.println("Paper won the game.");
         } else {
             System.out.println("Standoff - play again!");
-        }
+        }*/
     }
 }
 // Method playAgain nach Eingabe
 // Test schreiben
+// Exception handlen
 // Punktestand einführen
 // Rechtschreibung
 /*
 Mehrere Spieler einbauen:
-Alle drei Kombis ungültig
+
 Welcher der Spieler hat gewonnen? Contains ist zu ungenau, mal mit get(i) auf Index programmieren.
 Spielbeginn: Spieler 1  hat Schere, Spieler 2 Papier,  Spieler 3 hat Papier
 Prüfung Runde 1: Spieler 1  hat Schere, Spieler 2 Papier also ist Spieler 2 raus
 Prüfung Runde 2: Spieler 1 hat Schere, Spieler 3 hat Papier >> Spieler 3 ist raus
 Ergebnis: Spieler 1 hat gewonnen
 Reihenfolge-Prüfung, Spieler dann removen  und automatisch neue Runde
+Alle drei Kombis ungültig
  */
