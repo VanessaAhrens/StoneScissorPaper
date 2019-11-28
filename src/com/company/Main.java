@@ -25,19 +25,16 @@ public class Main {
             System.out.println(players.get(i) + ", choose Stone, Scissor or Paper");
             choice.add((scanner.next()));
         }
-        for (int i = 0; i < numberOfPlayersChosen; i++) {
+        for (int i = 0; i < choice.size(); i++) {
             if (choice.get(i).equals("Stone")) {
                 players.remove((choice.indexOf("Scissor")));
-            }
-            else if (choice.get(i).equals("Scissor")) {
+            } else if (choice.get(i).equals("Scissor")) {
                 players.remove((choice.indexOf("Paper")));
-            }
-            else {
+            } else if (choice.get(i).equals("Paper")) {
                 players.remove((choice.indexOf("Stone")));
             }
             System.out.println(choice);
-            System.out.println("choice.get 0" + choice.get(0));
-            System.out.println("The winner is... "+ players);
+            System.out.println("The winner is... " + players);
         }
         /*if (choice.get(i) == "Stone") {
                 players.remove((String.valueOf(i + 1)));
