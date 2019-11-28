@@ -26,19 +26,19 @@ public class Main {
             choice.add((scanner.next()));
         }
         for (int i = 0; i < numberOfPlayersChosen; i++) {
-            if (choice.get(i).equals("Stone") && choice.get(i++).equals("Scissor")) ;
-            {
-                players.remove(i + 1);
-                System.out.println(players.get(i) + " won the game.");
-                System.out.println("numberOfPlayersChosen " + choice.get(numberOfPlayersChosen));
-                System.out.println("i " + choice.get(i));
-                System.out.println("i++ " + choice.get(i++));
-                System.out.println("i+1 " + choice.get(i + 1));
-                System.out.println(players);
+            if (choice.get(0).equals("Stone")) {
+                players.remove((choice.indexOf("Scissor")));
             }
+            System.out.println(choice);
+            System.out.println("choice.get 0" + choice.get(0));
+            System.out.println("The winner is... "+ players);
         }
-
-       /* if (choice.contains("Stone") && choice.contains("Scissor")) {
+        /*if (choice.get(i) == "Stone") {
+                players.remove((String.valueOf(i + 1)));
+            }
+            System.out.println(choice);
+            System.out.println(players);*/
+         /* if (choice.contains("Stone") && choice.contains("Scissor")) {
             System.out.println("Stone won the game.");
         } else if (choice.contains("Scissor") && choice.contains("Paper")) {
             System.out.println("Scissor won the game.");
@@ -49,6 +49,8 @@ public class Main {
         }*/
     }
 }
+
+
 // Method playAgain nach Eingabe
 // Test schreiben
 // Exception handlen
